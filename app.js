@@ -19,7 +19,7 @@ app.use(
     cors({
         origin: [
             "http://localhost:5173",
-            "sports-partner-finder-frontend-hv719qf70.vercel.app"
+            "https://sports-partner-finder-frontend-hv719qf70.vercel.app"
         ],
         methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
         allowedHeaders: ["Content-Type", "Authorization"]
