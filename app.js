@@ -12,22 +12,21 @@ const reportRoute = require("./routes/report.routes");
 const app = express();
 
 
-// =========================================
-// MIDDLEWARES
-// =========================================
 
 app.use(express.json());
 
 app.use(
     cors({
-        origin: "http://localhost:5173"
+        origin: [
+            "http://localhost:5173",
+            "sports-partner-finder-frontend-hv719qf70.vercel.app"
+        ],
+        methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+        allowedHeaders: ["Content-Type", "Authorization"]
     })
 );
 
 
-// =========================================
-// ROUTES
-// =========================================
 
 app.use(
     "/api/auth",
@@ -64,10 +63,6 @@ app.use(
     reportRoute
 );
 
-
-// =========================================
-// HEALTH CHECK
-// =========================================
 
 app.get("/", (req, res) => {
 
