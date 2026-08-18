@@ -15,16 +15,12 @@ const app = express();
 
 app.use(express.json());
 
-app.use(
-    cors({
-        origin: [
-            "http://localhost:5173",
-            "https://sports-partner-finder-frontend-hv719qf70.vercel.app"
-        ],
-        methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-        allowedHeaders: ["Content-Type", "Authorization"]
-    })
-);
+app.use(express.urlencoded({ extended: true }));
+
+app.use(cors({
+    origin: "https://sports-partner-finder-frontend-hv719qf70.vercel.app",
+    credentials: true
+}));
 
 
 
