@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
-    origin: "https://sports-partner-finder-frontend-hv719qf70.vercel.app",
+    origin: "https://sports-partner-finder-frontend.vercel.app",
     credentials: true
 }));
 
